@@ -1,0 +1,222 @@
+<div class="content-show">
+	<div class="tool">
+		<button id="add" data-toggle="modal" data-target="#adduserModal">添加用户</button>
+	</div>
+	<table id="table" border="1">
+		<tr>
+			<th>用户ID</th>
+			<th>用户名</th>
+			<th>用户密码</th>
+			<th>用户邮箱</th>
+			<th>用户电话</th>
+			<th>用户真实姓名</th>
+			<th>用户工作</th>
+			<th>操作</th>					
+		</tr>
+		<?php foreach($users as $user):?>
+		<tr>
+			<td><?=$user['user_id']?></td>
+			<td><?=$user['user_name']?></td>
+			<td><?=$user['password']?></td>
+			<td><?=$user['email']?></td>
+			<td><?=$user['phone']?></td>
+			<td><?=$user['realname']?></td>
+			<td><?=$user['works']?></td>
+			<td>
+				<a class="edit" data-toggle="modal" data-target="#edituserModal">编辑</a>
+				<a class="delete" userid="<?=$user['user_id']?>">删除</a>
+			</td>					
+		</tr>
+		<?php endforeach;?>
+	</table>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="adduserModal" tabindex="-1" role="dialog" aria-labelledby="adduserLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="adduserLabel">添加用户</h4>
+      </div>
+      <form class="form-horizontal" id="adduserForm">
+      	<div class="modal-body">
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户名</label>
+		    <div class="col-xs-10">
+		      <input name="username" type="text" class="form-control" placeholder="用户名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户密码</label>
+		    <div class="col-xs-10">
+		      <input name="password" type="password" class="form-control" placeholder="用户密码">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户邮箱</label>
+		    <div class="col-xs-10">
+		      <input name="email" type="email" class="form-control" placeholder="用户邮箱">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户电话</label>
+		    <div class="col-xs-10">
+		      <input name="phone" type="text" class="form-control" placeholder="用户电话">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">真实姓名</label>
+		    <div class="col-xs-10">
+		      <input name="realname" type="text" class="form-control" placeholder="用户真实姓名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户工作</label>
+		    <div class="col-xs-10">
+		      <input name="work" type="text" class="form-control" placeholder="用户工作">
+		    </div>
+		  </div>
+      	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="adduser">保存</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="edituserModal" tabindex="-1" role="dialog" aria-labelledby="edituserLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="edituserLabel">修改用户</h4>
+      </div>
+      <form class="form-horizontal" id="edituserForm">
+      	<div class="modal-body">
+      		<input name="userid" type="hidden">
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户名</label>
+		    <div class="col-xs-10">
+		      <input name="username" type="text" class="form-control" placeholder="用户名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户密码</label>
+		    <div class="col-xs-10">
+		      <input name="password" type="password" class="form-control" placeholder="用户密码">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户邮箱</label>
+		    <div class="col-xs-10">
+		      <input name="email" type="eamil" class="form-control" placeholder="用户邮箱">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户电话</label>
+		    <div class="col-xs-10">
+		      <input name="phone" type="text" class="form-control" placeholder="用户电话">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">真实姓名</label>
+		    <div class="col-xs-10">
+		      <input name="realname" type="text" class="form-control" placeholder="用户真实姓名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">用户工作</label>
+		    <div class="col-xs-10">
+		      <input name="work" type="text" class="form-control" placeholder="用户工作">
+		    </div>
+		  </div>
+      	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="edituser">保存</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+var selected = '<?=$selected?>';
+$(function(){
+	for (var i = 0; i < $('#sidebar ul li').length; i++) {
+		var thisli = $('#sidebar ul li').eq(i);
+		if(thisli.attr('id') == selected){
+			thisli.addClass('active');
+		}
+	};
+	
+	$('#adduser').click(function(){
+		$.ajax({
+			type : 'post',
+			url : "<?php echo site_url('admin/add_user')?>",
+			data : $("#adduserForm").serialize(),
+			success : function(data){
+				alert(data);
+				window.location.href = "<?php echo site_url('admin/user')?>";
+			},
+			error : function(){
+				alert(error);
+			} 
+		});
+	});
+	$('.edit').click(function(){
+		var row = $('#table tr').eq($(this).parent().parent().index()).children('td');
+		var userid = row.eq(0).text();
+		var username = row.eq(1).text();
+		var password = row.eq(2).text();
+		var email = row.eq(3).text();
+		var phone = row.eq(4).text();
+		var realname = row.eq(5).text();
+		var works = row.eq(6).text();
+		console.log($("#edituserForm input").eq(0));
+		$("#edituserForm input").eq(0).val(userid);
+		$("#edituserForm input").eq(1).val(username);
+		$("#edituserForm input").eq(2).val(password);
+		$("#edituserForm input").eq(3).val(email);
+		$("#edituserForm input").eq(4).val(phone);
+		$("#edituserForm input").eq(5).val(realname);
+		$("#edituserForm input").eq(6).val(works);
+	});
+	$('#edituser').click(function(){
+		$.ajax({
+			type : 'post',
+			url : "<?php echo site_url('admin/edit_user')?>",
+			data : $("#edituserForm").serialize(),
+			success : function(data){
+				alert(data);
+				window.location.href = "<?php echo site_url('admin/user')?>";
+			},
+			error : function(){
+				alert(error);
+			} 
+		});
+	});
+	$('.delete').click(function(){
+		var confirm = window.confirm('是否删除');
+		if(confirm){
+			$.ajax({
+				type : 'post',
+				url : "<?php echo site_url('admin/delete_user')?>",
+				data : {'userid':$(this).attr('userid')},
+				success : function(data){
+					alert(data);
+					window.location.href = "<?php echo site_url('admin/user')?>";
+				},
+				error : function(){
+					alert(error);
+				} 
+			});
+		}
+	});
+});
+</script>

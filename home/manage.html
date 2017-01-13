@@ -1,0 +1,191 @@
+
+		<style type="text/css">
+			.my-nav{
+				background-color: #fff;
+			}
+			.my-header{
+				background-color: #FF5A60;
+			}
+			.my-header a{
+				color: #fff;
+			}
+			.nav-pills .my-header>a:hover{
+				background-color: #FF5A60;
+				color: #fff;
+			}
+		</style>
+		
+		<div class="container-fluid bg-eee">
+			<div class="container" style="margin-top: 30px;">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="well">
+							<ul class="nav nav-pills nav-stacked my-nav">	
+								<li class="my-header"><a>个人中心</a></li>
+								<li class="active"><a data-toggle="tab" href="#pdata">个人资料</a></li>
+								<li class=""><a data-toggle="tab" href="#message">消息中心</a></li>
+								<li class=""><a data-toggle="tab" href="#order">订单中心</a></li>
+								<div style="height: 30px;background-color: #f5f5f5;"></div>	
+								<li class="my-header"><a>产品服务</a></li>
+								<li class=""><a data-toggle="tab" href="#mobile">移动产品</a></li>
+								<li class=""><a data-toggle="tab" href="#web">网站开发</a></li>
+								<li class=""><a data-toggle="tab" href="#ui">UI设计</a></li>
+								<li class=""><a data-toggle="tab" href="#soft">软件开发</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="well">
+							<div class="tab-content">
+								
+								<div id="pdata" class="tab-pane active">
+									<h2>个人资料</h2>
+									<table class="table table-bordered">
+										<tr>
+											<td>
+												<h4>姓名：xxx</h4>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>性别：xxx</h4>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>电话：xxx</h4>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>修改密码</h4>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>修改邮箱</h4>
+											</td>
+										</tr>
+									</table>
+								</div>
+								
+								<div id="message" class="tab-pane">
+									<h2>消息中心</h2>
+									<table class="table table-bordered">
+										<tr>
+											<th>订单号</th>
+											<th>项目名称</th>
+											<th>项目单价</th>
+											<th>项目进度</th>
+											<th>交易状态</th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>开发游戏软件</td>
+											<td>100</td>
+											<td>完成</td>
+											<td>交易成功</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>做门户网站</td>
+											<td>100</td>
+											<td>完成</td>
+											<td>交易成功</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>开发应用</td>
+											<td>100</td>
+											<td>未完成</td>
+											<td>交易成功</td>
+										</tr>
+									</table>
+								</div>
+								
+								<div id="order" class="tab-pane">
+									<h2>订单中心</h2>
+									<table class="table table-bordered">
+										<tr>
+											<th>订单号</th>
+											<th>项目名称</th>
+											<th>项目单价</th>
+											<th>项目进度</th>
+											<th>交易状态</th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>开发游戏软件</td>
+											<td>100</td>
+											<td>完成</td>
+											<td>交易成功</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>做门户网站</td>
+											<td>100</td>
+											<td>完成</td>
+											<td>交易成功</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>开发应用</td>
+											<td>100</td>
+											<td>未完成</td>
+											<td>交易成功</td>
+										</tr>
+									</table>
+								</div>
+								
+								<div id="mobile" class="tab-pane">
+									<h2>移动产品</h2>
+									<ul class="nav nav-tabs">
+										<li class="active"><a aria-expanded="true" href="#android" data-toggle="tab">Android</a></li>
+										<li class=""><a aria-expanded="false" href="#ios" data-toggle="tab">ios</a></li>
+										<li class=""><a aria-expanded="false" href="#weixin" data-toggle="tab">微信平台</a></li>
+									</ul>
+									<div class="tab-content" style="padding: 10px;">
+										<div id="android" class="tab-pane active">
+											<table class="table table-bordered">
+												<tr>
+													<th>订单号</th>
+													<th>项目名称</th>
+													<th>项目单价</th>
+													<th>项目进度</th>
+													<th>交易状态</th>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>开发游戏软件</td>
+													<td>100</td>
+													<td>完成</td>
+													<td>交易成功</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>做门户网站</td>
+													<td>100</td>
+													<td>完成</td>
+													<td>交易成功</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>开发应用</td>
+													<td>100</td>
+													<td>未完成</td>
+													<td>交易成功</td>
+												</tr>
+											</table>
+										</div>
+										<div id="ios" class="tab-pane">ios</div>
+										<div id="weixin" class="tab-pane">微信平台</div>
+									</div>
+								</div>
+							</div>
+						</div><!--well-->
+					</div><!--col-md-9-->
+				</div><!--row-->
+			</div><!--container-->
+		</div><!--container-fluid-->
+		
+		

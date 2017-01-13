@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width-device-width, initial-scale-1, maximum-scale-1, user-scalable-no"/>
+	<title>首页</title>
+	<link rel="stylesheet" href="<?php echo base_url('home/css/bootstrap.min.css');?>"/>
+	<link rel="stylesheet" href="<?php echo base_url('home/css/public.css');?>"/>
+	<link rel="stylesheet" href="<?php echo base_url('home/css/index.css');?>">
+</head>
+
+<body>
+<div class="container-fluid navbar-fixed-top" id="top">
+	<!--<form class="navbar-form navbar-left" action="">
+		<div class="input-group input-group-sm">
+			<input class="form-control" type="text">
+			<span class="input-group-btn">
+					<button class="btn btn-default" type="button">搜索</button>
+			</span>
+		</div>
+	</form>-->
+	<div class="pull-right">
+		<p>
+			<a href="<?php echo site_url('home/manage')?>">管理中心</a>&nbsp;
+			<a href="<?php echo site_url('home/help')?>">帮助</a>&nbsp; 
+			<a href="<?php echo site_url('home/call_us')?>">联系我们</a>&nbsp;
+			<a href="<?php echo site_url('home/login')?>">登录</a>&nbsp;/&nbsp;<a href="regist">注册</a>
+		</p>
+	</div>	
+</div>
+<div class="container-fluid" id="my-nav">
+	<ul class="nav nav-pills" style="margin-left: 100px;">
+		<a class="pull-left"><img src="<?php echo base_url('home/img/logo.png')?>" style="height: 90px; width: 100px; padding-right: 10px;"/></a>
+		<li class="action"><a href="index.html">首页</a></li>
+		<li><a href="<?php echo site_url('home/product')?>">产品与服务</a></li>
+		<li><a href="<?php echo site_url('home/case')?>">经典案例</a></li>
+		<li><a href="<?php echo site_url('home/news')?>">新闻中心</a></li>
+		<li><a href="<?php echo site_url('home/joinus')?>">招贤纳士</a></li>
+		<li><a href="<?php echo site_url('home/community')?>">社区交流</a></li>
+		<li><a href="<?php echo site_url('home/invest')?>">投资合作</a></li>
+		<li><a href="<?php echo site_url('home/about')?>">关于我们</a></li>
+	</ul>
+</div>
+<div id="myCarousel" class="carousel slide">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active" style="background:#223240">
+			<img src="<?php echo base_url('home/img/slide1.png');?>" alt="第一张">
+		</div>
+		<div class="item" style="background:#F5E4DC;">
+			<img src="<?php echo base_url('home/img/slide2.png');?>" alt="第二张">
+		</div>
+		<div class="item" style="background:#DE2A2D;">
+			<img src="<?php echo base_url('home/img/slide3.png');?>" alt="第三张">
+		</div>
+	</div>
+	<a href="#myCarousel" data-slide="prev" class="carousel-control left">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a href="#myCarousel" data-slide="next" class="carousel-control right">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
+
+
+
+<div style="background: #ddd;">
+	<div class="container" style="padding: 40px;">
+	<div class="col-md-3">
+		<button class="btn btn-lg btn-danger center-block">
+		移动应用
+		</button>
+	</div>
+	<div class="col-md-3">
+		<button class="btn btn-lg btn-danger center-block">
+		虚拟现实
+		</button>
+	</div>
+	<div class="col-md-3">
+		<button class="btn btn-lg btn-danger center-block">
+		游戏开发
+		</button>
+	</div>
+	<div class="col-md-3">
+		<button class="btn btn-lg btn-danger center-block">
+		网站搭建
+		</button>
+	</div>
+	</div>
+</div>
+
+
+
+<div id="show">
+	<div class="container">
+		<blockquote style="border-left: 5px solid #EEA236;">经典案例</blockquote>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="row info-content">
+					<div class="col-md-5 col-sm-5 col-xs-5">
+						<img class="img-responsive" alt="" src="<?php echo base_url('img/slide1.png')?>">
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-7">
+						<h4>经典案例1</h4>
+						<p>admin 15 / 10 / 11</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row info-content">
+					<div class="col-md-5 col-sm-5 col-xs-5">
+						<img class="img-responsive" alt="" src="<?php echo base_url('img/slide1.png')?>">
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-7">
+						<h4>经典案例2</h4>
+						<p>admin 15 / 10 / 11</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row info-content">
+					<div class="col-md-5 col-sm-5 col-xs-5">
+						<img class="img-responsive" alt="" src="<?php echo base_url('img/slide1.png')?>">
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-7">
+						<h4>经典案例3</h4>
+						<p>admin 15 / 10 / 11</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row info-content">
+					<div class="col-md-5 col-sm-5 col-xs-5">
+						<img class="img-responsive" alt="" src="<?php echo base_url('img/slide1.png')?>">
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-7">
+						<h4>经典案例4</h4>
+						<p>admin 15 / 10 / 11</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="introduce">
+<div class="container">
+	<div class="col-md-3">
+		<ul class="list-group">
+			<li class="list-group-item active">新闻动态</li>
+			<li class="list-group-item">新闻动态1</li>
+			<li class="list-group-item">新闻动态1</li>
+			<li class="list-group-item">新闻动态1</li>
+			<li class="list-group-item">新闻动态1</li>
+			<li class="list-group-item">新闻动态1</li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item active">行业新闻</li>
+			<li class="list-group-item">行业新闻1</li>
+			<li class="list-group-item">行业新闻1</li>
+			<li class="list-group-item">行业新闻1</li>
+			<li class="list-group-item">行业新闻1</li>
+			<li class="list-group-item">行业新闻1</li>
+		</ul>
+	</div>
+	<div class="col-md-7">
+		<div class="well" style="height: 510px;">
+			主营业务
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="well" style="height: 510px;">
+			社区交流
+		</div>
+	</div>
+</div>
+</div>
+

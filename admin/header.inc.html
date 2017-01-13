@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="<?php echo base_url('admin/css/bootstrap.min.css');?>"/>
+<link rel="stylesheet" href="<?php echo base_url('admin/css/public.css');?>"/>
+<script src="<?php echo base_url('home/js/jquery.min.js')?>"></script>
+<script src="<?php echo base_url('home/js/bootstrap.min.js')?>"></script>
+</head>
+<body>
+<div id="header">
+	<img src="<?php echo base_url('admin/img/logo.png')?>" alt=""/>
+	<h2><a href="<?=site_url('admin/index')?>">水晶草莓后台管理</a></h2>
+	<span>
+		您好,
+		<a style="color:#880015"><?=$admin?></a>&nbsp;&nbsp;
+		<a href="<?=site_url('admin/logout')?>">退出</a>
+	</span>
+</div>
+<div id="main">
+	<div id="sidebar">
+		<ul>
+			<li id="user"><a href="<?=site_url('admin/user')?>"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+			<li id="product"><a href="<?=site_url('admin/product')?>"><i class="glyphicon glyphicon-book"></i><span>产品管理</span></a></li>
+			<li id="cases"><a href="<?=site_url('admin/cases')?>"><i class="glyphicon glyphicon-list"></i><span>案例管理</span></a></li>
+			<li id="news"><a href="<?=site_url('admin/news')?>"><i class="glyphicon glyphicon-bullhorn"></i><span>新闻管理</span></a></li>
+			<li id="download"><a href="<?=site_url('admin/download')?>"><i class="glyphicon glyphicon-download-alt"></i><span>下载管理</span></a></li>
+			<li id="video"><a href="<?=site_url('admin/video')?>"><i class="glyphicon glyphicon-facetime-video"></i><span>视频管理</span></a></li>
+			<li id="message"><a href="<?=site_url('admin/message')?>"><i class="glyphicon glyphicon-envelope"></i><span>消息管理</span></a></li>
+			<li id='order'><a href="<?=site_url('admin/order')?>"><i class="glyphicon glyphicon-check"></i><span>订单管理</span></a></li>
+		</ul>
+	</div>
+	<div id="container">
+		<div class="breadcrumbs">
+			<i class="glyphicon glyphicon-home"></i>
+			<a href="<?=site_url('admin/index')?>">首页</a>
+			/
+			<a href="<?=site_url('admin/index')?>"><?=$s_frist?></a>
+		</div>
+		<div class="content">
+			<div class="title">
+				<h2><?=$s_frist?></h2>
+				<i class="glyphicon glyphicon-chevron-right"></i>
+				<h3><?=$s_secend?></h3>
+			</div>

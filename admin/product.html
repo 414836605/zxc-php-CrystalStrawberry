@@ -1,0 +1,301 @@
+<style>
+.category{
+	float: right;
+	font-size: 16px;
+	line-height: 30px;
+	margin-right: 10px;
+	background: #428bca;
+}
+.category select{
+	width: 130px;
+	border: 1px solid #000;
+}
+.category select option{
+	border: 1px solid #000;
+}
+</style>
+<div class="content-show">
+	<div class="tool">
+		<button class="add" data-toggle="modal" data-target="#addcateModal">添加产品类别</button>
+		<button class="add" data-toggle="modal" data-target="#addproModal">添加产品</button>
+		<div class="category">
+			<span>产品类别</span>
+			<select id="catesel">
+			<?php foreach($cates as $cate):?>
+				<option value="<?=$cate['cate_id']?>">
+					<?php echo str_repeat('&nbsp', $cate['level']*2)?><?=$cate['cate_name']?>
+				</option>
+			<?php endforeach;?>
+			</select>
+		</div>
+	</div>
+	<table id="table" border="1">
+		<tr>
+			<th>产品ID</th>
+			<th>产品名</th>
+			<th>产品描述</th>
+			<th>产品图片</th>
+			<th>产品下载</th>
+			<th>产品详情</th>
+			<th>产品价格</th>
+			<th>操作</th>				
+		</tr>
+<?php foreach($products as $pro):?>
+		<tr>
+			<td><?=$pro['prod_id']?></td>
+			<td><?=$pro['prod_name']?></td>
+			<td><?=$pro['description_url']?></td>
+			<td><?=$pro['image_url']?></td>
+			<td><?=$pro['download_url']?></td>
+			<td><?=$pro['detail_url']?></td>
+			<td><?=$pro['price']?></td>
+			<td>
+				<a class="edit" data-toggle="modal" data-target="#editproModal">编辑</a>
+				<a class="delete" prodid="<?=$pro['prod_id']?>">删除</a>
+			</td>					
+		</tr>
+<?php endforeach;?>
+	</table>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="addproModal" tabindex="-1" role="dialog" aria-labelledby="addproLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addproLabel">添加产品</h4>
+      </div>
+      <form class="form-horizontal" id="addproForm">
+      	<input name="cate" type="hidden" id="cate">
+      	<div class="modal-body">
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品名</label>
+		    <div class="col-xs-10">
+		      <input name="name" type="text" class="form-control" placeholder="产品名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品描述</label>
+		    <div class="col-xs-10">
+		      <input name="describe" type="text" class="form-control" placeholder="产品描述">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品图片</label>
+		    <div class="col-xs-10">
+		      <input name="image" type="text" class="form-control" placeholder="产品图片">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品下载</label>
+		    <div class="col-xs-10">
+		      <input name="download" type="text" class="form-control" placeholder="产品下载">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品详情</label>
+		    <div class="col-xs-10">
+		      <input name="detail" type="text" class="form-control" placeholder="产品详情">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品价格</label>
+		    <div class="col-xs-10">
+		      <input name="price" type="text" class="form-control" placeholder="产品价格">
+		    </div>
+		  </div>
+      	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="addpro">保存</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="editproModal" tabindex="-1" role="dialog" aria-labelledby="editproLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editproLabel">修改产品</h4>
+      </div>
+      <form class="form-horizontal" id="editproForm">
+      	<input name="prodid" type="hidden" id="prodid">
+      	<div class="modal-body">
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品名</label>
+		    <div class="col-xs-10">
+		      <input name="name" type="text" class="form-control" placeholder="产品名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品描述</label>
+		    <div class="col-xs-10">
+		      <input name="describe" type="text" class="form-control" placeholder="产品描述">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品图片</label>
+		    <div class="col-xs-10">
+		      <input name="image" type="text" class="form-control" placeholder="产品图片">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品下载</label>
+		    <div class="col-xs-10">
+		      <input name="download" type="text" class="form-control" placeholder="产品下载">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品详情</label>
+		    <div class="col-xs-10">
+		      <input name="detail" type="text" class="form-control" placeholder="产品详情">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-2 control-label">产品价格</label>
+		    <div class="col-xs-10">
+		      <input name="price" type="text" class="form-control" placeholder="产品价格">
+		    </div>
+		  </div>
+      	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="editpro">保存</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="addcateModal" tabindex="-1" role="dialog" aria-labelledby="addcateLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addcateLabel">添加产品类别</h4>
+      </div>
+      <form class="form-horizontal" id="addcateForm">
+      	<div class="modal-body">
+		  <div class="form-group">
+		    <label class="col-xs-3 control-label">产品类别名</label>
+		    <div class="col-xs-9">
+		      <input name="name" type="text" class="form-control" placeholder="产品名">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-xs-3 control-label">产品父类别</label>
+		    <div class="col-xs-9">
+		    	<select class="form-control" name="fcate">
+		    		<option value="0">顶级分类</option>
+				<?php foreach($cates as $cate):?>
+					<option value="<?=$cate['cate_id']?>">
+						<?php echo str_repeat('&nbsp', $cate['level']*2)?><?=$cate['cate_name']?>
+					</option>
+				<?php endforeach;?>
+				</select>
+		    </div>
+		  </div>
+      	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="addcate">保存</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+$(function(){
+	var category = <?=$category?>;
+	for (var i = 0; i < $('#catesel option').length; i++) {
+		if($('#catesel option').eq(i).val() == category){
+			$('#catesel option').eq(i).attr('selected', 'selected');
+		}
+	};
+	$('#cate').val(category);
+	$('#catesel').change(function(){
+		window.location.href = "<?php echo site_url('admin/product')?>"+'/'+$(this).val();
+	});
+
+	$('#addpro').click(function(){
+		$.ajax({
+			type : 'post',
+			url : "<?php echo site_url('admin/add_product')?>",
+			data : $("#addproForm").serialize(),
+			success : function(data){
+				alert(data);
+				window.location.href = "<?php echo site_url('admin/product')?>"+'/'+category;
+			},
+			error : function(){
+				alert(error);
+			} 
+		});
+	});
+	$('#addcate').click(function(){
+		$.ajax({
+			type : 'post',
+			url : "<?php echo site_url('admin/add_category')?>",
+			data : $("#addcateForm").serialize(),
+			success : function(data){
+				alert(data);
+				window.location.href = "<?php echo site_url('admin/product')?>"+'/'+category;
+			},
+			error : function(){
+				alert(error);
+			} 
+		});
+	});
+	$('.edit').click(function(){
+		var row = $('#table tr').eq($(this).parent().parent().index()).children('td');
+		var proid = row.eq(0).text();
+		var proname = row.eq(1).text();
+		var describe = row.eq(2).text();
+		var image = row.eq(3).text();
+		var download = row.eq(4).text();
+		var detail = row.eq(5).text();
+		var price = row.eq(6).text();
+		$("#editproForm input").eq(0).val(proid);
+		$("#editproForm input").eq(1).val(proname);
+		$("#editproForm input").eq(2).val(describe);
+		$("#editproForm input").eq(3).val(image);
+		$("#editproForm input").eq(4).val(download);
+		$("#editproForm input").eq(5).val(detail);
+		$("#editproForm input").eq(6).val(price);
+	});
+	$('#editpro').click(function(){
+		$.ajax({
+			type : 'post',
+			url : "<?php echo site_url('admin/edit_product')?>",
+			data : $("#editproForm").serialize(),
+			success : function(data){
+				alert(data);
+				window.location.href = "<?php echo site_url('admin/product')?>"+'/'+category;
+			},
+			error : function(){
+				alert(error);
+			} 
+		});
+	});
+	$('.delete').click(function(){
+		var confirm = window.confirm('是否删除');
+		if(confirm){
+			$.ajax({
+				type : 'post',
+				url : "<?php echo site_url('admin/delete_product')?>",
+				data : {'prodid':$(this).attr('prodid')},
+				success : function(data){
+					alert(data);
+					window.location.href = "<?php echo site_url('admin/product')?>"+'/'+category;
+				},
+				error : function(){
+					alert(error);
+				} 
+			});
+		}
+	});
+});
+</script>
